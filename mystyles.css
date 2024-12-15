@@ -1,0 +1,575 @@
+
+@font-face {
+    font-family: 'Cinzel';
+    src: url('fonts/cinzel_regular.ttf');
+}
+
+body {
+    background-color: rgb(255, 255, 255);
+    font-family: 'Cinzel', sans-serif;
+    margin: 0; /* Убираем стандартные отступы у body */
+    display: flex; /* Используем Flexbox для выравнивания элементов */
+    flex-direction: column; /* Располагаем дочерние элементы в столбик */
+    align-items: center; /* Центруем содержимое по горизонтали */
+    justify-content: flex-start; /* Начинаем выравнивание элементов с верхней части */
+    height: 100vh; /* Устанавливаем высоту body на 100% высоты окна браузера */
+}
+
+/* Стили для хедера */
+.header {
+    background-color: #181818; /* Устанавливаем цвет фона для хедера */
+    display: flex; /* Используем Flexbox для выравнивания логотипа */
+    align-items: center; /* Центруем элементы по вертикали */
+    padding: 20px; /* Устанавливаем внутренние отступы */
+    width: 100%; /* Устанавливаем ширину хедера на 100% */
+    color: white; /* Устанавливаем цвет текста на белый */
+}
+
+body, html {
+    height: 100%; /* Задаем высоту 100% для body и html */
+    margin: 0;
+}
+
+
+/* Стили для логотипа */
+.logo {
+    flex: 1; /* Логотип занимает доступное пространство */
+    display: flex; /* Используем Flexbox для центрирования изображения */
+    justify-content: center; /* Центруем изображение по горизонтали */
+}
+
+/* Стили для изображения логотипа */
+.logo img {
+    max-height: 100px; /* Устанавливаем максимальную высоту логотипа */
+}
+
+/* Стили для навигации */
+nav {
+    display: flex; /* Используем Flexbox для размещения ссылок */
+    justify-content: center; /* Центруем ссылки по горизонтали */
+    width: 100%; /* Устанавливаем ширину навигации на 100% */
+    margin: 10px 0px; /* Устанавливаем верхний и нижний отступы */
+}
+nav a {
+    justify-content: center; 
+    color: black; /* Устанавливаем цвет текста на черный */
+    text-decoration: underline; /* Подчеркиваем текст ссылок */
+    margin: 0 20px; /* Устанавливаем отступы между ссылками */
+    padding: 0px 50px; /* Устанавливаем внутренние отступы */
+}
+
+
+/*Слайдер*/
+.my-slider {
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    max-width: 900px;
+    margin: 170px;
+}
+
+.slides-container {
+    display: flex;
+    transition: transform 0.7s ease;
+}
+
+.my-slide {
+    flex: 0 0 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #333;
+    padding: 30px 0;
+}
+
+.my-slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    max-height: 400px;
+    object-fit: cover;
+}
+
+.my-slide a,
+.form-subscribe a {
+    padding: 10px 200px;
+    margin: -20px;
+    font-size: 1rem;
+    background-color: #2f0400;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.my-slide a:hover,
+.form-subscribe a:hover {
+    background-color: #7a0000;
+}
+
+.btn-prev, .btn-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 16px;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 0;
+}
+
+.btn-prev { left: 10px; }
+.btn-next { right: 10px; }
+
+@media (max-width: 720px) {
+    .my-slide h2 { font-size: 1.5rem; }
+    .my-slide p { font-size: 1rem; }
+    .btn-prev, .btn-next { padding: 12px; }
+}
+
+
+.image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 500px; /* Отступ сверху */
+}
+
+.image-container img {
+    max-width: 450px; /* Адаптивная ширина */
+    height: auto; /* Автоматическая высота */
+    margin-right: 50px;
+}
+
+.caption0 {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px; /* Отступ слева */
+}
+
+.caption-text {
+    text-align: center; /* Центрирование текста */
+    margin: 5px;
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px; /* Отступ слева */
+}
+
+.divider {
+    width: 100%; /* Ширина полосы */
+    height: 1px; /* Высота полосы */
+    background-color: #939393; /* Цвет полосы */
+    margin: 5px; /* Отступы сверху и снизу */
+}
+
+
+.image-container2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px 20px 20px 20px; /* Отступ сверху */
+    position: relative;
+}
+
+.image-container2 img {
+    max-width: 100%;
+    height: 500px;
+    padding: 50px 20px;
+    object-fit: cover;
+}
+
+.caption-text2 {
+    position: absolute; /* Абсолютное позиционирование */
+    top: 65%; /* Центрируем по вертикали */
+    left: 50%; /* Центрируем по горизонтали */
+    transform: translate(-50%, -50%); /* Смещение для полного центрования */
+    text-align: center; /* Центрирование текста */
+    font-size: 2.5rem;
+    color: white; /* Цвет текста, чтобы он был видим на фон */
+
+    text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.8);
+}
+
+.caption-text2 p {
+    font-size: 2rem;
+    margin-bottom: -10px;
+}
+
+
+/* Новости*/
+.containernews{
+    border: 2px solid #757575; /* Цвет и ширина рамки */
+    padding: 0px 20px 20px 20px; /* Отступы внутри рамки */
+    width: 800px; /* Ширина рамки */
+    height: 600px;
+    margin: 20px; /* Центрирование рамки на странице */
+}
+img {
+    width: 100%; /* Изображение будет растягиваться по ширине родителя */
+    height: auto; /* Автоматическая высота для сохранения пропорций */
+}
+
+
+/*Статьи*/
+.articles {
+    flex: 1;
+    display: flex; /* Выравниваем прямоугольники в строку */
+}
+.rectangle {
+    position: relative;
+    width: 400px;
+    height: 600px;
+    margin: 30px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.rectangle1 {
+    background-color: #AD9C7E;
+}
+.rectangle1 caption {
+    text-align: left;
+    margin-top: 5px;
+    padding-right: 100px;
+}
+
+.rectangle2 {
+    background-color: #546E45;
+}
+.rectangle2 caption {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.rectangle3 {
+    background-color: #3C4038;
+}
+.rectangle3 caption {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.caption {
+    position: absolute;
+    color: #fff;
+    text-shadow: 0 2px 2px rgb(0, 0, 0);
+}
+
+.caption1 {
+    top:80px; 
+    left: 0px; 
+    font-size: 1.5rem; 
+    margin-left: 20px;
+}
+.caption2 {
+    font-size: 1.1rem; 
+    top:210px; 
+    left: 0px; 
+    padding-right: 80px; 
+    margin-left: 20px;
+}
+.caption3 {
+    font-size: 1.1rem; 
+    top:450px; 
+    right: 20px; 
+    text-align: right; 
+    padding-left: 130px;
+}
+.caption4 {
+    top: 225px;
+}
+.caption5 {
+    font-size: 1.2rem;
+    top: 310px; 
+    text-align: center; 
+    padding: 0px 20px 0px 20px;
+}
+.caption6 {
+    top: 80px;
+    right: 20px;
+}
+.caption7 {
+    top: 280px;
+    right: 20px; 
+    text-align: right;
+    font-size: 1.1rem;
+}
+.caption8 {
+    top: 450px;
+    right: 20px; 
+    text-align: right;
+    font-size: 1.1rem;
+}
+.image {
+    position: absolute;
+    height: auto;
+}
+
+
+/*События*/
+.events {
+    display: flex;
+}
+
+.containerevents {
+    border: 2px solid #757575; /* Цвет и ширина рамки */
+    width: 1200px; /* Ширина рамки */
+    padding: 20px;
+    height: auto;
+    margin: 20px 20px 10px 20px; /* Центрирование рамки на странице */
+    justify-content: start;
+    display: flex;
+}
+
+.image0 {
+    position: relative; 
+    max-width: 200px; 
+    height: auto;
+    margin: 10px 0px;
+}
+
+.newstext { 
+    display: flex;
+    flex-direction: column;
+    margin: 0px 20px;
+}
+.containerevents h3 {
+    font-size: 1.2rem;
+    margin: 10px 0px;
+}
+
+.containerevents p {
+    font-size: 1rem;
+    margin: 0%;
+}
+
+
+
+/*О нас*/
+.text {
+    flex: 1;
+    justify-content: right;
+    margin: 50px;
+}
+
+.text p{
+    padding-right: 200px;
+}
+
+.text hr {
+    margin: 50px 0px 50px 0px;
+}
+
+
+/*Футер*/
+.site-footer {
+    width: 100%;
+    background-color: #3d1919; /* Серый цвет фона */
+    color: white; /* Белый текст для лучшей видимости */
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+.footer-content {
+    margin: 0 auto; /* Центрирование футера */
+}
+
+.footer-links {
+    list-style: none; /* Убираем маркеры списка */
+    padding: 0; /* Убираем отступы */
+}
+
+.footer-links li {
+    display: inline; /* Выводим ссылки в одну строку */
+    margin: 0 10px; /* Отступы между ссылками */
+}
+
+.footer-links a {
+    color: white; /* Цвет ссылки */
+    text-decoration: none; /* Убираем подчеркивание */
+}
+
+.footer-links a:hover {
+    text-decoration: underline; /* Подчеркивание при наведении */
+}
+
+
+
+
+/* Общие стили для мобильных устройств */
+@media (max-width: 720px) {
+    body {
+        font-size: 14px; /* Уменьшаем размер шрифта для мобильных */
+        padding: 0;
+    }
+
+    .header {
+        padding: 10px; /* Уменьшаем отступы для заголовка */
+    }
+
+    .logo img {
+        max-height: 60px; /* Уменьшаем размер логотипа */
+    }
+
+    nav {
+        flex-direction: column; /* Располагаем ссылки в столбик */
+        align-items: center;
+        margin: 10px 0;
+    }
+
+    nav a {
+        margin: 5px 0; /* Уменьшаем отступы между ссылками */
+        padding: 5px 10px; /* Уменьшаем внутренние отступы */
+    }
+
+
+    /*Главная*/
+    .my-slider {
+        margin: 20px auto; /* Центрируем и уменьшаем отступы слайдера */
+        max-width: 100%; /* Устанавливаем ширину слайдера 100% для адаптации */
+        align-items: center;
+        top: 210px;
+    }
+
+    .my-slide{
+        padding: 14px 0;
+    }
+    .my-slide a{
+        padding: 10px 110px;
+    }
+
+    .my-slide img {
+        max-height: 250px; /* Уменьшаем высоту изображений */
+        width: 96%;
+        height: auto;
+    }
+
+    .btn-prev, .btn-next {
+        padding: 10px; /* Уменьшаем размер кнопок */
+    }
+
+    .image-container {
+        margin-top: 230px;
+    }
+    .image-container img {
+        max-width: 50%; /* Изображения занимают всю ширину экрана */
+        margin: 10px 5px
+    }
+
+    .caption0 {
+        margin-left: 0; /* Убираем отступ слева */
+        margin-right: 35px;
+        text-align: center; /* Центрируем текст */
+    }
+    .caption-text{
+        font-size: 1.2rem;
+        margin: 0px;
+    }
+
+    .image-container2 {
+        max-width: 200px;
+        display:flex;
+    }
+    
+    .image-container2 img {
+        height: auto; /* Автоматическая высота для корректного отображения */
+        margin: 10px 0; /* Добавляем отступы между изображениями */
+        padding: 15px 4px;
+    }
+
+    .caption-text2 {
+        font-size: 1.5rem; /* Уменьшаем размер текста */
+        top: 50%; /* Регулируем позицию текста */
+    }
+
+
+    /*Новости*/
+    .containernews {
+        padding: 10px; /* Уменьшаем внутренние отступы */
+        margin: 10px; /* Уменьшаем внешние отступы */
+        width: 385px;
+        height: auto;
+    }
+    .containernews h1 {
+        font-size: 1.5rem;
+        margin: 10px 0px;
+    }
+
+    .imagenews {
+        max-height: 200px; /* Ограничиваем высоту изображений на маленьких экранах */
+    }
+
+    /*Статьи*/
+    .articles {
+        flex: 1;
+        display: flex; /* Выравниваем прямоугольники в строку */
+        flex-direction: column;
+    }
+
+
+    /*События*/
+    .containerevents {
+        flex: 1;
+        width: auto; /* Ширина рамки */
+        padding: 20px;
+        height: auto;
+        flex-direction: column; /* Изменяем расположение элементов на вертикальное */
+        padding: 10px; /* Уменьшаем отступы */
+    }
+
+    .image0 {
+        max-width: 100%; /* Изображение занимает всю ширину контейнера */
+        margin: 0px 0px; /* Добавляем отступ снизу */
+    }
+
+    .newstext {
+        margin: 0; /* Убираем лишние отступы */
+    }
+
+    .containerevents h3 {
+        font-size: 1rem; /* Уменьшаем размер заголовка */
+    }
+
+    .containerevents p {
+        font-size: 0.8rem; /* Уменьшаем размер текста */
+    }
+
+    /*О нас*/
+    .text {
+        flex: 1;
+        justify-content: right;
+        margin: 20px;
+    }
+    .text p {
+        padding-right: 0px;
+    }
+
+    /*футер*/
+    footer {
+        font-size: 12px; /* Уменьшаем шрифт в футере */
+        text-align: center; /* Центрируем текст */
+    }
+
+    .footer-links {
+        display: flex;
+        flex-direction: column; /* Ссылки в столбик */
+        margin: 10px 0;
+    }
+
+    .footer-links li {
+        margin: 5px 5px; /* Уменьшаем отступы между ссылками */
+    }
+}
